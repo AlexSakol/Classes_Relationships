@@ -1,0 +1,31 @@
+﻿using Assotiation;
+
+Product chair = new Product("Кресло", 4);
+Console.WriteLine(chair);
+Product table = new("Стол", 5.78);
+Console.WriteLine(table);
+Product cpu = new Product("Intel", 43.62);
+Console.WriteLine(cpu);
+Product ssd = new("kingston", 13.49);
+Console.WriteLine(ssd);
+Section furniture = new("Мебель");
+Console.WriteLine(furniture);
+Section computers = new("Компьютеры");
+Console.WriteLine(computers);
+Shop gum = new("Гум");
+Console.WriteLine(gum);
+Shop tsum = new("Цум", furniture, computers);
+Console.WriteLine(tsum);
+Console.WriteLine("Добавим стол в мебель");
+Console.WriteLine(tsum.AddProduct(table, furniture));
+Console.WriteLine(tsum);
+Console.WriteLine("Добавим стол еще раз в мебель");
+Console.WriteLine(tsum.AddProduct(table, furniture));
+Console.WriteLine(tsum);
+Console.WriteLine("Добавим кресло в мебель");
+Console.WriteLine(tsum.AddProduct(chair, furniture));
+Console.WriteLine(tsum);
+Console.WriteLine("Создадим секцию 1, которой нет в ЦУМе и добавим туда стол");
+Console.WriteLine(tsum.AddProduct(table, new("1")));
+Console.WriteLine(tsum);
+
